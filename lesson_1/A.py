@@ -1,5 +1,5 @@
 # https://contest.yandex.ru/contest/59539/problems/A/
-def old_main():
+def sol_1():
     # 15 успешных тестов, 16 - memory limit
     # сложность O(n)
     p, v = map(int, input().split())  # номер дерева, у которого стоит ведро Васи и
@@ -15,7 +15,7 @@ def old_main():
     print(len(colored))  # количество деревьев
 
 
-def main():
+def sol_2():
     # OK
     # сложность O(1)
     p, v = map(int, input().split())  # номер дерева, у которого стоит ведро Васи и
@@ -48,5 +48,18 @@ def main():
     return
 
 
+def sol_3():
+    # OK
+    # Решение с разбора
+    p, v = map(int, input().split())
+    q, m = map(int, input().split())
+    minv, maxv = p - v, p + v
+    minm, maxm = q - m, q + m
+    if max(minv, minm) <= min(maxv, maxm):
+        print(max(maxv, maxm) - min(minv, minm) + 1)
+    else:
+        print((maxv - minv + 1) + (maxm - minm + 1))
+
+
 if __name__ == '__main__':
-    main()
+    sol_2()  # my solution
